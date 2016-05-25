@@ -1,32 +1,32 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'experian/version'
+require File.expand_path('../lib/experian/version', __FILE__)
 
-Gem::Specification.new do |spec|
-  spec.name          = "experian"
-  spec.version       = Experian::VERSION
-  spec.authors       = ["Elias"]
-  spec.email         = ["eliasjpr@gmail.com"]
+Gem::Specification.new do |s|
+  s.name          = "experian-ms"
+  s.version       = Experian::VERSION.dup
+  s.author        = "Elias J. Perez"
+  s.email         = "eperez@pinch.me"
+  s.homepage      = "https://github.com/eliasjpr/experian-ms"
+  s.summary       = "A Ruby wrapper that Integrates Experian Marketing Suite endpoints."
+  s.description   =  %q{The Experian Marketing Suite is the world's most flexible
+    and comprehensive cloud-based marketing platform. More than 10,000 of the world's
+    leading brands, in over than 30 countries, are using the Experian Marketing Suite
+    to create and deliver intelligent interactions with their customers, every time.
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-  spec.license       = "MIT"
+    Built from the ground-up leveraging 30 years of data-driven global marketing expertise,
+    the award-winning Experian Marketing Suite unites Experian's customer identity,
+    analytics and cross-channel marketing technology..}
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
+  s.files         = `git ls-files`.split("\n")
+  s.require_paths = ['lib']
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.licenses      = ['MIT']
+  s.platform      = Gem::Platform::RUBY
+  s.rubyforge_project = s.name
 
-  spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  s.add_runtime_dependency 'httparty', '~> 0.13'
 
-  spec.add_development_dependency "bundler", "~> 1.12"
-  spec.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency 'rake', '~> 11.1'
+  s.add_development_dependency 'vcr', '~> 3.0'
+  s.add_development_dependency 'rspec', '~> 3.4'
+  s.add_development_dependency 'webmock', '~> 2.1'
 end

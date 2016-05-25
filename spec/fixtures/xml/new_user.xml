@@ -1,0 +1,11 @@
+<ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="615">
+  <Records SubmissionSequence="1" FormId="19" TableName="User">
+    <Record>
+      <Field FieldName="user_profile_id">A</Field>
+      <Field FieldName="user_id">B</Field>
+      <Field FieldName="category">C</Field>
+      <Field FieldName="category_value">D</Field>
+      <Field FieldName="active_ind">Y</Field>
+    </Record>
+  </Records>
+</ApiSubmission>

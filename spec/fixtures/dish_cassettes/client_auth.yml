@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ats.eccmp.com/ats/oauth2/Token
+    body:
+      encoding: UTF-8
+      string: username=&password=&grant_type=password&client_id=
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - '0'
+      Set-Cookie:
+      - ASP.NET_SessionId=ufqhynvtqwlaq2hcyk5llf4c; path=/; secure; HttpOnly
+      - BIGipServercnv_ats_ssl_pool=575084554.47873.0000; path=/; Httponly; Secure
+      - xyz_adm_adm_org_user_language_code=en; expires=Thu, 25-Aug-2016 14:01:09 GMT;
+        path=/
+      - xyz_adm_adm_org_user_locale_code=en-US; expires=Thu, 25-Aug-2016 14:01:09
+        GMT; path=/
+      - xyz_adm_adm_org_user_time_zone_id=; expires=Thu, 25-Aug-2016 14:01:09 GMT;
+        path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 27 May 2016 14:01:09 GMT
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"AAEAAFak09rybM4rT1GWStkHYLlraADL0zt4_l0LfB66U82nR4OOvclg2tUm70Lc9lNm-ttZnJPztAmWqvjsN_5cWXSMQB0_5w6gF8_On9MjDK4h-DPgcN9cD_x-ANV8GbiqqQjV07TsAT8_qzJy_8NQXd7y7Pkqr_Nn2tMxAgEYVGxAk9G9RUmRt-YOA4bF_fW54eqys5D1HYPida6S6LpB6LR_D5CPtY4j_RftoYs63nYxkj7-l0uG33NzTbTYFtcw9pu9ENtCPzST42K9T_9RGPMdHkSxLqQm2ZYQqIDZxe4fPQK0fC6wFS-Wcgl2dzHhsoj9G7-flIe2Ul9PvYW7-450AQAAAAEAAG99f_oFLu4QO-y7RO4YzADU5mKXgRoXm8CwqxOPqhW7N-EXrT7dr5iM1gpY5Kf9fElN2EcMphDGBwxudRXJqAlI6eToRppwO9SaGCNUwpBWiboHihcYABZtuUIoeMln20xiRlIFw6YzrS_tB89mGd6RB1YJ9c3tsSL_Q5KnDH5HJrELmAPlcdgh-CuHhFRDapyEiSZucoPyhDacLlYIeYpjLnl_J3fWmo6LZvykHc7uR89aS0ge3X2SO4QsUtTHK0VBakzouezKlD6BdVdV7s4rVziH7Yt39XYmEETbWumRdyJXhLRi9ZkkA6oNL_PhJChX-4AKJkn3061rUYBQ7Cm_tPMt3eTyTPZPih78ze2VZLxkU0sNnB6stjy5JMbCahzTf_hv3FGZBr0aqmFMFS_skQtVgByR1MQ2Sc8rrcJZYNFRMIiZVy9IXHmfeTQEz_LF6wS4bFXQDuiwHR7wxi0Y8sT10qJ-UsrFiRIGPoW8","token_type":"bearer","expires_in":28800,"refresh_token":"k-Ou!IAAAAFO6iMpp1hsyhW9o7Fl8bWG0pzAJ3ZW7wkFL5ybc-TFegQAAAAG-lmFCKrZWhmM-5glme9P2W4VxduirwHUgS_lL2vxbTF6JifKPlFX9FvWQaonIqyIrIgHmVO2Z8ito-AszkhqNxUgUV8w9zOoA5OQvmKUdtlxZlMFe3hIFLU2YsV7j5KyEE39EWYFWsQPFyFTUozH3ARgjfbaEqkDY2BS632EBNg"}'
+    http_version:
+  recorded_at: Fri, 27 May 2016 14:01:11 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,101 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ats.eccmp.com/ats/oauth2/Token
+    body:
+      encoding: UTF-8
+      string: username=&password=&grant_type=&client_id=
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Expires:
+      - '0'
+      Set-Cookie:
+      - ASP.NET_SessionId=vdpwsplmklcarq1h4xc0kazn; path=/; secure; HttpOnly
+      - BIGipServercnv_ats_ssl_pool=575084554.47873.0000; path=/; Httponly; Secure
+      - xyz_adm_adm_org_user_language_code=en; expires=Thu, 25-Aug-2016 14:03:05 GMT;
+        path=/
+      - xyz_adm_adm_org_user_locale_code=en-US; expires=Thu, 25-Aug-2016 14:03:05
+        GMT; path=/
+      - xyz_adm_adm_org_user_time_zone_id=; expires=Thu, 25-Aug-2016 14:03:05 GMT;
+        path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 27 May 2016 14:03:05 GMT
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"AAEAALAXJpqjojZzLmJn_HmxeQ89cfwBtK7GdnLhGJbFgWdKSaaM38qatPJ14p4XIFraRhfqlajpx26q-UufmXn3nUc8jbqC2_bnEh4jhzZ0eUv_05GcWHrW6kN6ZOlvEXns2urW0d2L3dl1rr9O72A-t2kNgDy4ai4gajgn4gM_LHpgWxY5CWZdzvsIqRxhPpfFbVCHY18WbgIJSXCE0elkX7D4EA81rP3XqOr7UHEt4UxrCHHYBEOjQPGOMFJN9_dBF5jqdBflbf6kf8jload4i2gsrCP6aWCraLsodfRuKkbmzEmi-vuwj2gA5sWUwmPXE5jZ-4LjF_uuoxLyI434jzJ0AQAAAAEAACBWQVUgFcbtTxKZqMzyEBX2SfPXQ66xeQXjLI5LRPBQwaWzP_SMRS_mlcsWdB8N70lv4qedQuWqYkGN748ve13T7dDwwoNALGscBE80CmdAbOb2FquLx2bkPX7roBFT4ciQUJklJjVRol2TTTvDcwEmPNyeefO3MYpFT6yX04-wGKIFFzXHaQ8IeB4gGBzsB6A1S4Run-Mw6xp4lY_HY1HnPW_8k7JtX7C3cmiIRABKBWzuyDX2s0F-qrP-d_KdcX9N2FFTdksDcxrvZTUq1BJj28zA6bEH-d3HQB-GI7MdjM5gODI0uiYGdQ6hImfkPVomMIMR1LWwDnz4tWBdcR3mZBJY7_h0IU_IXUMDEIDYGMM9nmkg9RTJmTlfCixVhQyNBSHLODZaxSe_-DeJXhA36tt9NksOzNTx9ZeNd7VW0E7aUxkfKXyelugA9SXCjJq_reiFapamheVk2ZLyCPkl_mgkYrmD5xIWee8h4bKm","token_type":"bearer","expires_in":28800,"refresh_token":"k-Ou!IAAAAHfY7WaM-yyvAs7cs2Lo7O3PHOExQhggqcWZLbW-umaDgQAAAAGKxEbeMau3t7WdgTEdecivryanQsaOJSUDd5rKZXpO6hTJ6bhKsPhBdYiTMGFf5rWikB3wAylCSRacij_FQdRGueGvEOKnfXj8K81tv2sbEYWCKhvoGtzQYLb4x-K4OmCfskp__63OulEfr5lZmmubsmdOc8ebTJMwOET0LetoOQ"}'
+    http_version:
+  recorded_at: Fri, 27 May 2016 14:03:06 GMT
+- request:
+    method: post
+    uri: https://ats.eccmp.com/ats/XmlPost/PostSecureAuth2/
+    body:
+      encoding: UTF-8
+      string: |-
+        <ApiSubmission ApiVersion="1" FormGroupId="1" CustId="615">
+          <Records SubmissionSequence="2" FormId="19" TableName="User">
+            <Record>
+              <Field FieldName="user_id">12345</Field>
+              <Field FieldName="first_name">John</Field>
+            </Record>
+          </Records>
+          <Records SubmissionSequence="1" FormId="19" TableName="UserProfile">
+            <Record>
+              <Field FieldName="category">children</Field>
+              <Field FieldName="value">12345</Field>
+            </Record>
+          </Records>
+        </ApiSubmission>
+    headers:
+      Authorization:
+      - Bearer AAEAALAXJpqjojZzLmJn_HmxeQ89cfwBtK7GdnLhGJbFgWdKSaaM38qatPJ14p4XIFraRhfqlajpx26q-UufmXn3nUc8jbqC2_bnEh4jhzZ0eUv_05GcWHrW6kN6ZOlvEXns2urW0d2L3dl1rr9O72A-t2kNgDy4ai4gajgn4gM_LHpgWxY5CWZdzvsIqRxhPpfFbVCHY18WbgIJSXCE0elkX7D4EA81rP3XqOr7UHEt4UxrCHHYBEOjQPGOMFJN9_dBF5jqdBflbf6kf8jload4i2gsrCP6aWCraLsodfRuKkbmzEmi-vuwj2gA5sWUwmPXE5jZ-4LjF_uuoxLyI434jzJ0AQAAAAEAACBWQVUgFcbtTxKZqMzyEBX2SfPXQ66xeQXjLI5LRPBQwaWzP_SMRS_mlcsWdB8N70lv4qedQuWqYkGN748ve13T7dDwwoNALGscBE80CmdAbOb2FquLx2bkPX7roBFT4ciQUJklJjVRol2TTTvDcwEmPNyeefO3MYpFT6yX04-wGKIFFzXHaQ8IeB4gGBzsB6A1S4Run-Mw6xp4lY_HY1HnPW_8k7JtX7C3cmiIRABKBWzuyDX2s0F-qrP-d_KdcX9N2FFTdksDcxrvZTUq1BJj28zA6bEH-d3HQB-GI7MdjM5gODI0uiYGdQ6hImfkPVomMIMR1LWwDnz4tWBdcR3mZBJY7_h0IU_IXUMDEIDYGMM9nmkg9RTJmTlfCixVhQyNBSHLODZaxSe_-DeJXhA36tt9NksOzNTx9ZeNd7VW0E7aUxkfKXyelugA9SXCjJq_reiFapamheVk2ZLyCPkl_mgkYrmD5xIWee8h4bKm
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, must-revalidate
+      Pragma:
+      - no-cache
+      Content-Type:
+      - text/html; charset=utf-8
+      Expires:
+      - '0'
+      Set-Cookie:
+      - ASP.NET_SessionId=; path=/; secure
+      - BIGipServercnv_ats_ssl_pool=575084554.47873.0000; path=/; Httponly; Secure
+      - xyz_adm_adm_org_user_language_code=en; expires=Thu, 25-Aug-2016 14:14:49 GMT;
+        path=/
+      - xyz_adm_adm_org_user_locale_code=en-US; expires=Thu, 25-Aug-2016 14:14:49
+        GMT; path=/
+      - xyz_adm_adm_org_user_time_zone_id=; expires=Thu, 25-Aug-2016 14:14:49 GMT;
+        path=/
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Fri, 27 May 2016 14:14:48 GMT
+      Content-Length:
+      - '34'
+    body:
+      encoding: UTF-8
+      string: Data saved and pending processing.
+    http_version:
+  recorded_at: Fri, 27 May 2016 14:14:50 GMT
+recorded_with: VCR 3.0.3

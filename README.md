@@ -1,41 +1,69 @@
-# Experian
+# Experian Marketing Suite API Integration
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/experian`. To experiment with that code, run `bin/console` for an interactive prompt.
+A Ruby wrapper that Integrates Experian Marketing Suit endpoints.
 
-TODO: Delete this and the text above, and describe your gem
+The Experian Marketing Suite is the world's most flexible and comprehensive
+cloud-based marketing platform. More than 10,000 of the world's leading brands,
+in over than 30 countries, are using the Experian Marketing Suite to create and
+deliver intelligent interactions with their customers, every time. Built from the
+ground-up leveraging 30 years of data-driven global marketing expertise, the
+award-winning Experian Marketing Suite unites Experian's customer identity,
+analytics and cross-channel marketing technology..
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
 ```ruby
-gem 'experian'
+gem 'experian-ms', '~> 0.1.3'
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install experian
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Require the Experian
+require 'experian-ms'
 
-## Development
+# Configure the API Wrapper
+# For a rails application this can be added to an Experian initializer
+Experian.configure do |config|
+  config.key           = 'your-oauth2-key' # OAuth2 Consumer Key
+  config.secret        = 'your-oauth2-secret' # OAuth2 Secret Key
+  config.client_id     = 0 # Client id provided by Experian
+  config.customer_id   = 0 # Customer id provided by Experian
+  config.api_version   = 0 # Experian API version
+  config.form_group_id = 0 # Form group id provided by Experian
+end
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# In your Model, Worker, Services
+# Returns an Experian API instance
+api_client = Experian.api
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Sends the items to Experian endpoint
+api_client.request(xml) # See example xml payload below
 
+```
+
+Example **XML** Payload
+
+```xml
+<ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="615">
+  <Records SubmissionSequence="1" FormId="19" TableName="User">
+    <Record>
+      <Field FieldName="user_profile_id">A</Field>
+      <Field FieldName="user_id">B</Field>
+      <Field FieldName="category">C</Field>
+      <Field FieldName="category_value">D</Field>
+      <Field FieldName="active_ind">Y</Field>
+    </Record>
+  </Records>
+</ApiSubmission>
+```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/experian. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/eliasjpr/experian-ms.
+This project is intended to be a safe, welcoming space for collaboration, and
+contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
