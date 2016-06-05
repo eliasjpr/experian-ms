@@ -13,14 +13,14 @@ analytics and cross-channel marketing technology..
 ## Installation
 
 ```ruby
-gem 'experian-ms', '~> 0.1.3'
+gem 'experian-ms', '~> 0.1.5'
 ```
 
 ## Usage
 
 ```ruby
 # Require the Experian
-require 'experian-ms'
+require 'experian_ms'
 
 # Configure the API Wrapper
 # For a rails application this can be added to an Experian initializer
@@ -45,11 +45,11 @@ api_client.request(xml) # See example xml payload below
 Example **XML** Payload
 
 ```xml
-<ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="615">
+<ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="345">
   <Records SubmissionSequence="1" FormId="19" TableName="User">
     <Record>
-      <Field FieldName="user_profile_id">A</Field>
-      <Field FieldName="user_id">B</Field>
+      <Field FieldName="user_id">A</Field>
+      <Field FieldName="profile_id">B</Field>
       <Field FieldName="category">C</Field>
       <Field FieldName="category_value">D</Field>
       <Field FieldName="active_ind">Y</Field>
