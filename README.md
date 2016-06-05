@@ -13,7 +13,7 @@ analytics and cross-channel marketing technology..
 ## Installation
 
 ```ruby
-gem 'experian-ms', '~> 0.1.5'
+gem 'experian_ms', '~> 0.1.6'
 ```
 
 ## Usage
