@@ -1,8 +1,8 @@
-require File.expand_path('../lib/experian/version', __FILE__)
+require File.expand_path('../lib/experian_ms/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name          = "experian-ms"
-  s.version       = Experian::VERSION.dup
+  s.version       = ExperianMS::VERSION.dup
   s.author        = "Elias J. Perez"
   s.email         = "eperez@pinch.me"
   s.homepage      = "https://github.com/eliasjpr/experian-ms"

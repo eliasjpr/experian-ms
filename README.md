@@ -24,7 +24,7 @@ require 'experian-ms'
 
 # Configure the API Wrapper
 # For a rails application this can be added to an Experian initializer
-Experian.configure do |config|
+ExperianMS.configure do |config|
   config.key           = 'your-oauth2-key' # OAuth2 Consumer Key
   config.secret        = 'your-oauth2-secret' # OAuth2 Secret Key
   config.client_id     = 0 # Client id provided by Experian
@@ -35,7 +35,7 @@ end
 
 # In your Model, Worker, Services
 # Returns an Experian API instance
-api_client = Experian.api
+api_client = ExperianMS.api
 
 # Sends the items to Experian endpoint
 api_client.request(xml) # See example xml payload below

@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
-RSpec.describe Experian do
+RSpec.describe ExperianMS do
   # Configure Experian API
-  Experian.configure do |config|
+  ExperianMS.configure do |config|
     config.key           = ''
     config.secret        = ''
     config.client_id     = 0
@@ -11,15 +11,15 @@ RSpec.describe Experian do
   end
 
   # Returns a new instance of the API
-  let(:client) { Experian.api }
+  let(:client) { ExperianMS.api }
 
   describe "attributes" do
     it 'must include HTTParty' do
-      expect(Experian::API).to include(HTTParty)
+      expect(ExperianMS::API).to include(HTTParty)
     end
 
     it 'must have base uri set to Experian API endpoint' do
-      expect(Experian::API.base_uri).to eq 'https://ats.eccmp.com'
+      expect(ExperianMS::API.base_uri).to eq 'https://ats.eccmp.com'
     end
   end
 

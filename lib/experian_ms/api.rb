@@ -10,7 +10,7 @@ module ExperianMS
 
     # Creates a new API
     def initialize(options={})
-      options = Experian.options.merge(options)
+      options = ExperianMS.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end

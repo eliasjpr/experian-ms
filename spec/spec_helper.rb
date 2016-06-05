@@ -1,5 +1,5 @@
 #we need the actual library file
-require_relative '../lib/experian'
+require_relative '../lib/experian_ms'
 require 'webmock/rspec'
 require 'vcr'
 
