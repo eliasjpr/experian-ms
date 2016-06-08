@@ -11,6 +11,8 @@ ground-up leveraging 30 years of data-driven global marketing expertise, the
 award-winning Experian Marketing Suite unites Experian's customer identity,
 analytics and cross-channel marketing technology..
 
+> **Note** This wrapper only uses a single Experian Endpoint
+
 ## Installation
 
 ```ruby
