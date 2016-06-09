@@ -1,7 +1,7 @@
 # Experian Marketing Suite API Integration
 
 A Ruby wrapper that Integrates Experian Marketing Suit endpoints. At the moment
-the API only supports **POST** data to Experian marketing suite.
+the API only supports **XML POST** data to Experian marketing suite.
 
 The Experian Marketing Suite is the world's most flexible and comprehensive
 cloud-based marketing platform. More than 10,000 of the world's leading brands,
@@ -30,22 +30,27 @@ require 'experian_ms'
 # For a rails application this can be added to an Experian initializer (config/initializers/experian_ms_conf.rb)
 # and theres no need to require the module
 ExperianMS.configure do |config|
-  config.key           = 'your-oauth2-key' # OAuth2 Consumer Key
-  config.secret        = 'your-oauth2-secret' # OAuth2 Secret Key
-  config.client_id     = 0 # Client id provided by Experian
-  config.customer_id   = 0 # Customer id provided by Experian
-  config.api_version   = 0 # Experian API version
-  config.form_group_id = 0 # Form group id provided by Experian
+  config.base_url        = 'https://ats.eccmp.com'
+  config.customer_id     = 0 # Customer id provided by Experian
+  config.api_version     = 0 # Experian API version
+  config.form_group_id   = 0 # Form group id provided by Experian
+  config.key             = 'your-oauth2-key' # OAuth2 Consumer Key
+  config.secret          = 'your-oauth2-secret' # OAuth2 Secret Key
+  config.client_id       = 0 # Client id provided by Experian
+  config.oauth2_endpoint = 'https://ats.eccmp.com/ats/oauth2/Token'
+  config.content_type    = 'application/x-www-form-urlencoded'
 end
 
 # In your Model, Worker, Services, Controllers, etc
 api_client = ExperianMS.api # Returns an Experian API instance
 
 # Sends the items to Experian endpoint
-api_client.request(xml) # See example xml payload below
+# xml = Xml Payload
+# end_point defaults to 'ats/XmlPost/PostSecureAuth2'
+api_client.request(xml, end_point) # See example xml payload below
 ```
 
-Example **XML** Payload
+Example **XML** Payload for **/ats/XmlPost/PostSecureAuth2** EndPoint
 
 ```xml
 <ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="345">
@@ -59,6 +64,30 @@ Example **XML** Payload
     </Record>
   </Records>
 </ApiSubmission>
+```
+
+Example **XML** Payload for **/services2/api/EmailCampaign/Trigger** EndPoint
+
+```xml
+<InstantTrigger>
+    <recipient>
+        <apiPostId>00</apiPostId>
+        <data>
+            <ColumnValue>
+                <name>email</name>
+                <value>some.email@email.com</value>
+            </ColumnValue>
+            <ColumnValue>
+                <name>user_id</name>
+                <value>-100</value>
+            </ColumnValue>
+            <ColumnValue>
+                <name>URL</name>
+                <value>example URL</value>
+            </ColumnValue>
+        </data>
+    </recipient>
+</InstantTrigger>
 ```
 ## Contributing
 

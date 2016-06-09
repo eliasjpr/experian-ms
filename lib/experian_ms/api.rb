@@ -24,15 +24,15 @@ module ExperianMS
       conf
     end
 
-    def request(xml)
+    def request(xml, end_point = '/ats/XmlPost/PostSecureAuth2/')
       authenticate
-      post(xml)
+      post(xml, end_point)
     end
 
     private
 
-    def post(xml)
-      self.class.post('/ats/XmlPost/PostSecureAuth2/',
+    def post(xml, end_point)
+      self.class.post(end_point,
                       headers:grant_header,
                       body: xml,
                       debug_output: $stdout).parsed_response
