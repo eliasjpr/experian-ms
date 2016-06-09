@@ -50,7 +50,7 @@ api_client = ExperianMS.api # Returns an Experian API instance
 api_client.request(xml, end_point) # See example xml payload below
 ```
 
-Example **XML** Payload for **/ats/XmlPost/PostSecureAuth2** EndPoint
+Example **XML** Payload for **https://ats.eccmp.com/ats/XmlPost/PostSecureAuth2** EndPoint
 
 ```xml
 <ApiSubmission ApiVersion="1" FormGroupId="1" SubmissionTrackingCode="SOMECODE" CustId="345">
@@ -66,7 +66,7 @@ Example **XML** Payload for **/ats/XmlPost/PostSecureAuth2** EndPoint
 </ApiSubmission>
 ```
 
-Example **XML** Payload for **/services2/api/EmailCampaign/Trigger** EndPoint
+Example **XML** Payload for **https://api.eccmp.com/services2/api/EmailCampaign/Triggerr** EndPoint
 
 ```xml
 <InstantTrigger>
