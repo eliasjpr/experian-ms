@@ -1,6 +1,7 @@
 module ExperianMS
   module Configuration
     BASE_URL        = 'https://ats.eccmp.com'.freeze
+    CONTENT_TYPE    = 'application/xml'.freeze
     CUSTOMER_ID     = 0
     API_VERSION     = 1
     FORM_GROUP_ID   = 1
@@ -8,7 +9,6 @@ module ExperianMS
     SECRET          = ''
     CLIENT_ID       = ''
     OAUTH2_ENDPOINT = 'https://ats.eccmp.com/ats/oauth2/Token'.freeze
-    CONTENT_TYPE    = 'application/x-www-form-urlencoded'.freeze
     VALID_OPTIONS_KEYS = [:base_url,
                           :customer_id,
                           :api_version,

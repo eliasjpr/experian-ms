@@ -38,7 +38,7 @@ ExperianMS.configure do |config|
   config.secret          = 'your-oauth2-secret' # OAuth2 Secret Key
   config.client_id       = 0 # Client id provided by Experian
   config.oauth2_endpoint = 'https://ats.eccmp.com/ats/oauth2/Token'
-  config.content_type    = 'application/x-www-form-urlencoded'
+  config.content_type    = 'application/xml'
 end
 
 # In your Model, Worker, Services, Controllers, etc

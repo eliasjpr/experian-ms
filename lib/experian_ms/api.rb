@@ -14,6 +14,12 @@ module ExperianMS
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key])
       end
+      self.class.base_uri base_url
+    end
+
+    def change_base_uri=(uri)
+      send(:base_url, uri)
+      self.class.base_uri uri
     end
 
     def config
@@ -33,7 +39,7 @@ module ExperianMS
 
     def post(xml, end_point)
       self.class.post(end_point,
-                      headers:grant_header,
+                      headers: grant_header.merge("Content-Type" => content_type),
                       body: xml,
                       debug_output: $stdout).parsed_response
     end
